@@ -76,8 +76,18 @@ def main(iterations, ensembles, episodes, agent_type, agent_args, env_type, env_
 
 def print_help(args):
     """Print help"""
-    print "Usage: %s <episodes> <episodes> <agent:args> <environment:args>" % (
+    print "Usage: %s <iterations> <ensembles> <episodes> <agent:args> <environment:args> <file_prefix>" % (
         args[0])
+    print "iterations: Number of times the environment is run."
+    print "ensembles: Number of times the agent is run (with different seed) in each environment."
+    print "episodes: Number of episodes each agent is run."
+    print "agent:args"
+    print "\tagent: String name of agent. One of the following: [IntraOptionQ, MacroQ, QLearning, RandomAgent, SARSA]"
+    print "\targs: Arguments (colon separated) to the Agent classe's constructor."
+    print "environement:args"
+    print "\tenvironment: String name of environment. One of the following: [ArbitraryNavigation, ArbitraryNavigationOptions, Rooms, RoomsOptions, Taxi, TaxiOptions]"
+    print "\targs: Arguments (colon separated) to the environment classe's create static method."
+    print "file_prefix: Filename to save learning data."
 
 
 def convert(arg):

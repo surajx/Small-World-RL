@@ -54,6 +54,7 @@ def run(env, agent, episodes):
             episodic_return.append(ret)
             episodic_epochs.append(epochs)
             epochs = 0
+            episode += 1
 
     # Chop off any extras
-    return ret[: epochs]
+    return ret

@@ -133,7 +133,7 @@ class ArbitraryNavigation():
         R = {}
         # Add rewards to all states that transit into the goal state
         s = state_idx(*goal)
-        for s_ in xrange(S):
+        for s_ in xrange(env.S):
             R[(s_, s)] = ArbitraryNavigation.REWARD_SUCCESS - \
                 ArbitraryNavigation.REWARD_BIAS
 

@@ -189,7 +189,7 @@ class Taxi():
         return S, A, P, R, R_bias, start_set, end_set
 
     @staticmethod
-    def create(spec):
+    def create(spec=None):
         """Create a taxi from @spec"""
         if spec is None:
             road_map, starts = Taxi.make_map_from_size(5, 5)
