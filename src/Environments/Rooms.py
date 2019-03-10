@@ -228,6 +228,7 @@ class Rooms():
         state_idx = functools.partial(Rooms.state_idx, road_map, f)
 
         # Add rewards to all states that transit into the goal state
+        R = {}
         start_set = None
         end_set = []
 
@@ -237,7 +238,7 @@ class Rooms():
             # Get reward for moving to s
             reward = np.random.normal(
                 Rooms.REWARD_SUCCESS - Rooms.REWARD_BIAS, Rooms.REWARD_SUCCESS_VAR)
-            for s_ in xrange(S):
+            for s_ in xrange(env.S):
                 R[(s_, g)] = reward
             end_set.append(g)
 
